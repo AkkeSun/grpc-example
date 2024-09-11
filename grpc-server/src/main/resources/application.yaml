@@ -5,8 +5,5 @@ grpc:
 spring:
   application:
     name: od-service
-  main:
-    allow-circular-references: true
-
 server:
   port: 9100

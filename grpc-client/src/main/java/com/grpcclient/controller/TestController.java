@@ -1,7 +1,7 @@
 package com.grpcclient.controller;
 
-import com.grpcclient.service.GrpcService;
-import grpc.admin.SaveUserInfoResponse;
+import com.grpcclient.dto.FindUserAppVersionResponse;
+import com.grpcclient.service.FindUserAppVersionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class TestController {
 
-    private final GrpcService grpcService;
-
-    @GetMapping ("/test")
-    public SaveUserInfoResponse test (String name) {
-        return grpcService.grpcProcess(name);
+    private final FindUserAppVersionService grpcService;
+    @GetMapping ("/app-version")
+    public FindUserAppVersionResponse test (String userId) {
+        return grpcService.saveUser(userId);
     }
+
 }

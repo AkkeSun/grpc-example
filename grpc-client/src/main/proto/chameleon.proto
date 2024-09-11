@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "grpc.chameleon";
+option java_outer_classname = "ChameleonProto";
+
+service Chameleon {
+  rpc findUserAppVersion (FindUserAppVersionGprcRequest) returns (FindUserAppVersionGrpcResponse); // service 정의
+}
+
+message FindUserAppVersionGprcRequest {
+  string userId = 1;
+  string shopLoginId = 2;
+  string os = 3;
+  string shopCode = 4;
+}
+
+message FindUserAppVersionGrpcResponse {
+  bool result = 1;
+  string appVersion = 2;
+}

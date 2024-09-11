@@ -2,6 +2,6 @@ server:
   port: 8080
 grpc:
   client:
-    test:
-      address: 'static://localhost:9091' # od-service server url
-      negotiation-type: plaintext
+    chameleon:
+      address: 'static://localhost:9091' # grpc server url
+      negotiation-type: plaintext # check
